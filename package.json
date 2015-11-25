@@ -1,0 +1,29 @@
+{
+  "name": "test-values",
+  "version": "1.0.0",
+  "description": "A bunch of helpers for generating test values",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "prepublish": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanhoad/test-values.git"
+  },
+  "keywords": [
+    "test",
+    "values",
+    "junk"
+  ],
+  "author": "Nathan Hoad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanhoad/test-values/issues"
+  },
+  "homepage": "https://github.com/nathanhoad/test-values#readme",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "should": "^7.1.1"
+  }
+}
