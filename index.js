@@ -3,14 +3,15 @@ var NAMES = require('./lib/names');
 
 var TestValues = {
     
-    name: function (onlyFirstName) {
-        var name = NAMES[Math.floor(Math.random() * NAMES.length)];
+    name: function (length) {
+        if (typeof length === "undefined") length = 2;
         
-        if (onlyFirstName) {
-            return name;
-        } else {
-            return name + ' ' + NAMES[Math.random() * NAMES.length];
+        var names = [];
+        for (var i = 0; i < length; i++) {
+            names.push(NAMES[Math.floor(Math.random() * NAMES.length)]);
         }
+        
+        return names.join(' ');
     },
     
     
@@ -22,6 +23,25 @@ var TestValues = {
         } else {
             return name + '@test.com';
         }
+    },
+    
+    
+    phone: function (countryCode) {
+        var number = 100000000 + Math.floor(Math.random() * 100000000);
+        
+        if (countryCode) {
+            return countryCode + number;
+        } else {
+            return '0' + number;
+        }
+    },
+    
+    
+    url: function () {
+        var tlds = ['com', 'net', 'org', 'info'];
+        var hostname = this.name(4).toLowerCase().replace(/[^a-z]/g, '-') + '.' + tlds[Math.floor(Math.random() * tlds.length)];
+        
+        return 'http://' + hostname
     }
     
 }

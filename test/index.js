@@ -51,4 +51,33 @@ describe('Test Values', function () {
             done();
         });
     });
+    
+    
+    describe('#phone', function () {
+        it('generates a random phone number', function (done) {
+            var phone = Values.phone();
+            
+            Should(phone).be.a.String;
+            Should(phone.length).equal(10);
+            Should(phone[0]).equal('0');
+            
+            phone = Values.phone('+61');
+            Should(phone.length).equal(12);
+            Should(phone.substring(0, 3)).equal('+61');
+            
+            done();
+        });
+    });
+    
+    
+    describe('#url', function () {
+        it('generates a random url', function (done) {
+            var url = Values.url();
+            
+            Should(url).be.a.String;
+            Should(url).containEql('http://');
+            
+            done();
+        });
+    });
 });
