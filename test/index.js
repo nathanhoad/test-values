@@ -9,11 +9,19 @@ describe('Test Values', function () {
             
             Should(name).be.a.String;
             Should(name).containEql(' ');
+            Should(name).not.containEql('undefined');
             
-            name = Values.name(true);
+            name = Values.name(1);
             
             Should(name).be.a.String;
             Should(name).not.containEql(' ');
+            
+            name = Values.name(5);
+            
+            Should(name).be.a.String;
+            Should(name).containEql(' ');
+            Should(name.split(' ').length).equal(5);
+            Should(name).not.containEql('undefined');
             
             done();
         });
