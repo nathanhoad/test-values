@@ -1,4 +1,5 @@
 var NAMES = require('./lib/names');
+var WORDS = require('./lib/words');
 
 
 var TestValues = {
@@ -12,6 +13,11 @@ var TestValues = {
         }
         
         return names.join(' ');
+    },
+    
+    
+    word: function () {
+        return WORDS[Math.floor(Math.random() * WORDS.length)];
     },
     
     

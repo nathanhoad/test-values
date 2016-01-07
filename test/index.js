@@ -28,6 +28,16 @@ describe('Test Values', function () {
     });
     
     
+    describe('#word', function () {
+        it('returns a random word', function (done) {
+            var word = Values.word();
+            
+            Should(word).be.a.String;
+            done();
+        });
+    });
+    
+    
     describe('#email', function () {
         it('returns a random but valid email', function (done) {
             var email = Values.email();

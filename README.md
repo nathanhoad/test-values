@@ -22,6 +22,13 @@ user.name = Values.name(true); // eg. Sam
 ```
 
 
+### Words
+
+```javascript
+thing.name = Values.word(); // eg. thesaurus
+```
+
+
 ### Emails
 
 ```javascript
