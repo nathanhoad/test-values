@@ -21,6 +21,21 @@ var TestValues = {
     },
     
     
+    number: function (min, max) {
+        // number(10) -> 0..10
+        if (typeof min !== "undefined" && typeof max === 'undefined') {
+            min = 0;
+            max = min;
+        // number() || number(10, 100)
+        } else {
+            min = min || 0;
+            max = max || 1000000;
+        }
+        
+        return min + (Math.random() * (max - min));
+    },
+    
+    
     email: function (hostname) {
         var name = (this.name(true) + '_' + this.name(true) + '_' + Math.floor(Math.random() * 100000)).toLowerCase();
         

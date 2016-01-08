@@ -38,6 +38,27 @@ describe('Test Values', function () {
     });
     
     
+    describe('#number', function () {
+        it('returns a random number', function (done) {
+            var number = Values.number();
+            
+            Should(number).be.a.Number;
+            
+            number = Values.number(10);
+            
+            Should(number).be.a.Number;
+            Should(number).be.within(0, 10);
+            
+            number = Values.number(10, 100);
+            
+            Should(number).be.a.Number;
+            Should(number).be.within(10, 100);
+            
+            done();
+        });
+    });
+    
+    
     describe('#email', function () {
         it('returns a random but valid email', function (done) {
             var email = Values.email();
@@ -58,7 +79,7 @@ describe('Test Values', function () {
             var emails = [],
                 email;
             
-            for (var i = 0; i < 1000; i++) {
+            for (var i = 0; i < 100; i++) {
                 email = Values.email();
                 
                 Should(emails).not.containEql(email);
