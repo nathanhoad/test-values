@@ -48,11 +48,19 @@ describe('Test Values', function () {
             
             Should(number).be.a.Number;
             Should(number).be.within(0, 10);
+            Should(number).be.equal(Math.floor(number));
             
             number = Values.number(10, 100);
             
             Should(number).be.a.Number;
             Should(number).be.within(10, 100);
+            Should(number).be.equal(Math.floor(number));
+            
+            number = Values.number(10, 100, 2);
+            
+            Should(number).be.a.Number;
+            Should(number).be.within(10, 100);
+            Should(number).be.within(Math.floor(number), Math.ceil(number));
             
             done();
         });

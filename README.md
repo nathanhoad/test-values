@@ -29,6 +29,16 @@ thing.name = Values.word(); // eg. thesaurus
 ```
 
 
+### Numbers
+
+```javascript
+thing.amount = Values.number(); // eg. 91527
+thing.amount = Values.number(10); // eg. 7
+thing.amount = Values.number(10, 100); // eg. 27
+thing.amount = Values.number(10, 100, 2); // eg 13.37
+```
+
+
 ### Emails
 
 ```javascript

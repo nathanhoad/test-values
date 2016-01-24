@@ -21,7 +21,9 @@ var TestValues = {
     },
     
     
-    number: function (min, max) {
+    number: function (min, max, precision) {
+        if (precision == null) precision = 0;
+        
         // number(10) -> 0..10
         if (typeof min !== "undefined" && typeof max === 'undefined') {
             min = 0;
@@ -32,7 +34,7 @@ var TestValues = {
             max = max || 1000000;
         }
         
-        return min + (Math.random() * (max - min));
+        return parseFloat((min + Math.random() * (max - min)).toFixed(precision));
     },
     
     
