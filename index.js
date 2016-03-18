@@ -65,6 +65,11 @@ var TestValues = {
         var hostname = this.name(4).toLowerCase().replace(/[^a-z]/g, '-') + '.' + tlds[Math.floor(Math.random() * tlds.length)];
         
         return 'http://' + hostname
+    },
+    
+    
+    random: function (array) {
+        return array[Math.floor(Math.random() * array.length)];
     }
     
 }

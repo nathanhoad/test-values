@@ -127,4 +127,19 @@ describe('Test Values', function () {
             done();
         });
     });
+    
+    
+    describe('#random', function () {
+        it('picks a random item from', function (done) {
+            var items = ['first', 'second', 'third'];
+            var item;
+            
+            for (var i = 0; i < 100; i++) {
+                item = Values.random(items);
+                Should(items.indexOf(item)).not.equal(-1);
+            }
+            
+            done();
+        });
+    });
 });
